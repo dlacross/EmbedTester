@@ -3,8 +3,8 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.11'
 gem 'heroku'
 
-group :production do
-  gem 'pg'
+group :production, :staging do
+  gem "pg"
 end
 
 group :development do
