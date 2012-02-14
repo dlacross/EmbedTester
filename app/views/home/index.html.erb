@@ -1,0 +1,28 @@
+<h1>Test some embeds, son</h1>
+
+<p>For legacy embeds, enter the Username in the 'ID' field. For newer embeds, enter the user ID</p>
+
+ <%= form_tag(home_index_path, :method => "get") do %>
+
+  <%= label_tag(:username, "ID") %>
+  <%= text_field_tag(:username) %>
+  <br />
+  <%= label_tag(:embed, "Choose Embed:") %>
+  <%= select_tag(:embed_id, options_from_collection_for_select(Embeds.all, :id, :displayname)) %>
+<br>
+  <%= label_tag(:environment, "Choose Environment:") %>
+  <%= select_tag(:environment_id, options_from_collection_for_select(Environment.all, :id, :name)) %>
+<br>
+  <%= submit_tag("Generate Embed") %>
+<% end %>
+
+  <% if @embed %>
+	<div>
+		<p>
+			<%= @embed.displayname %>
+		</p>
+		
+			<%= raw formatIframe(@embed) %>
+		
+	</div>
+  <% end %>
