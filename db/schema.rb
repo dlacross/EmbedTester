@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20120212202801) do
   create_table "embeds", :force => true do |t|
     t.string   "name"
     t.string   "displayname"
-    t.boolean  "active",      :limit => 255
+    t.boolean  "active"
     t.text     "iframe_code", :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
