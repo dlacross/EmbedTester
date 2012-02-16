@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20120212202801) do
     t.string   "name"
     t.string   "displayname"
     t.boolean  "active"
-    t.text     "iframe_code", :limit => 255
+    t.text     "iframe_code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
